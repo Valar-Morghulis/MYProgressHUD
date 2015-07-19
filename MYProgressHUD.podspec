@@ -13,9 +13,9 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "A short description of MYProgressHUD."
 
-  s.description  = <<-MYProgressHUD
+  s.description  = <<-DESC
                    A short description of MYProgressHUD.
-                   MYProgressHUD
+                   DESC
 
   s.homepage     = "https://github.com/Valar-Morghulis/MYProgressHUD"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
