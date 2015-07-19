@@ -287,7 +287,6 @@
 	if (self) {
         
         _canCancel = FALSE;
-        _addedTapRecoginzer = FALSE;
         
         // Set default values for properties
         self.animationType = MYProgressHUDAnimationFade;
@@ -749,23 +748,21 @@
     {
         _tapRecoginzer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clicked:)];
     }
-    if(!_addedTapRecoginzer)
-    {
-        [self addGestureRecognizer:_tapRecoginzer];
-        _addedTapRecoginzer = TRUE;
-    }
+    [self addGestureRecognizer:_tapRecoginzer];
 }
 -(void)removeTapRecoginzer
 {
-    if(_addedTapRecoginzer && _tapRecoginzer)
+    if(_tapRecoginzer)
     {
         [self removeGestureRecognizer:_tapRecoginzer];
-        _addedTapRecoginzer = FALSE;
     }
 }
 -(void)clicked:(UITapGestureRecognizer *)recognizer
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:CTWaitingViewTapRecognizerClickedKey object:nil];
+    if(self.delegate &&[self.delegate respondsToSelector:@selector(hudWasTaped:)])
+    {
+        [self.delegate hudWasTaped:self];
+    }
 }
 -(void)set_canCancel:(BOOL)canCancel
 {

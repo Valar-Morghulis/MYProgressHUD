@@ -3,7 +3,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import "CommonToolsDefine.h"
+
 @protocol MYProgressHUDDelegate;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,9 +101,8 @@ typedef enum {
 	CGAffineTransform rotationTransform;
     
     
-    //add by maying
+    //add by my
     BOOL _canCancel;
-    BOOL _addedTapRecoginzer;
     UITapGestureRecognizer * _tapRecoginzer;
 }
 @property(nonatomic,readwrite) BOOL _canCancel;
@@ -362,7 +361,10 @@ typedef enum {
  * @deprecated use hudWasHidden: instead
  * @see hudWasHidden:
  */
-- (void)hudWasHidden __attribute__ ((deprecated)); 
+- (void)hudWasHidden __attribute__ ((deprecated));
+
+//
+-(void)hudWasTaped:(MYProgressHUD *)hud;
 
 @end
 
