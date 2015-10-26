@@ -46,8 +46,8 @@ s.source_files = 'MYProgressHUD/*.{h,m}'
 
 
   # s.framework  = "SomeFramework"
-  #s.frameworks = "Foundation", "UIKit"
-  #s.dependency     'yajl-objc', '~> 0.2.27'
+  s.frameworks = "Foundation", "UIKit"
+  s.dependency     'MBProgressHUD'
 
 
   s.requires_arc = false
